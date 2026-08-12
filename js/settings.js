@@ -51,20 +51,10 @@ SIM.SETTINGS = {
             SIM.UI.updateSidebar();
         });
 
-        view.talents.on('click', '.icon', function (e) {
+view.talents.on('click', '.icon', function (e) {
             let talent = view.getTalent($(this));
             let total = view.getTalentTotal($(this));
             if (total < talent.y * 5) return;
-
-            let storage = JSON.parse(localStorage[mode + (globalThis.profileid || 0)]);
-            let level = parseInt(storage.level);
-            let count = 0;
-            for (let tree of talents)
-                for (let talent of tree.t)
-                    count += talent.c;
-            let available = Math.max(level - 9 - count, 0);
-            if (available <= 0) return;
-
             talent.c = talent.c < talent.m ? talent.c + 1 : talent.m;
             $(this).attr('data-count', talent.c);
             if (talent.c >= talent.m) $(this).addClass('maxed');
@@ -77,13 +67,11 @@ SIM.SETTINGS = {
             SIM.UI.updateSidebar();
             view.buildSpells();
         });
-
         view.talents.on('contextmenu', '.icon', function (e) {
             e.preventDefault();
             let talent = view.getTalent($(this));
             if (talent.c < 1) return;
             talent.c--;
-
             let valid = true;
             let count = [];
             let tree = $(this).parents('table').index() - 2;
