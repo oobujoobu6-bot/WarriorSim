@@ -90,6 +90,14 @@ var buffs = [
       other:true
    },
    {
+      id: 23028,
+      spellid: true,
+      name: "Testttttt",
+      iconname: "spell_chargepositive",
+      crit: 5,
+      other:true
+   },
+   {
       id: 16609,
       spellid: true,
       name: "Warchief's Blessing",
