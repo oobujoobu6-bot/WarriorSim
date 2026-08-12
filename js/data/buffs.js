@@ -24,6 +24,7 @@ var buffs = [
       iconname: "Ability_Racial_Avatar",
       group: "stance",
       stance: 'zerk',
+      crit: 3,
       minlevel: 30,
    },
    {
@@ -90,12 +91,14 @@ var buffs = [
       other:true
    },
    {
-      id: 23028,
+      id: 25101,
       spellid: true,
-      name: "Testttttt",
-      iconname: "spell_chargepositive",
-      crit: 5,
-      other:true
+      name: "Battle Shout",
+      iconname: "ability_warrior_battleshout",
+      group: "battleshout",
+      ap: 400,
+      other: true,
+      minlevel: 52
    },
    {
       id: 16609,
